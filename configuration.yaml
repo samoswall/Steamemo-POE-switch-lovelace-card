@@ -1,0 +1,91 @@
+sensor:
+  - platform: template 
+    sensors:
+      poe_lan_speed:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_lan1_link", "unavailable") or is_state("sensor.gps204v1234567890_lan1_link", "disconnected") %}
+          grey
+          {% elif (states.sensor.gps204v1234567890_lan1_link.state == "100M") %}
+          lightgreen
+          {% else %}
+          orange
+          {% endif %}
+      poe_port1_speed:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_1_link", "unavailable") or is_state("sensor.gps204v1234567890_1_link", "disconnected") %}
+          grey
+          {% elif (states.sensor.gps204v1234567890_1_link.state == "100M") %}
+          lightgreen
+          {% else %}
+          orange
+          {% endif %}
+      poe_port2_speed:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_2_link", "unavailable") or is_state("sensor.gps204v1234567890_2_link", "disconnected") %}
+          grey
+          {% elif (states.sensor.gps204v1234567890_2_link.state == "100M") %}
+          lightgreen
+          {% else %}
+          orange
+          {% endif %}
+      poe_port3_speed:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_3_link", "unavailable") or is_state("sensor.gps204v1234567890_3_link", "disconnected") %}
+          grey
+          {% elif (states.sensor.gps204v1234567890_3_link.state == "100M") %}
+          lightgreen
+          {% else %}
+          orange
+          {% endif %}
+      poe_port4_speed:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_4_link", "unavailable") or is_state("sensor.gps204v1234567890_4_link", "disconnected") %}
+          grey
+          {% elif (states.sensor.gps204v1234567890_4_link.state == "100M") %}
+          lightgreen
+          {% else %}
+          orange
+          {% endif %}
+      poe_power:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_voltage", "unavailable") %}
+          grey
+          {% else %}
+          lightgreen
+          {% endif %}
+      poe_port1_power:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_1_power", "unavailable") %}
+          --
+          {% elif is_state( "switch.gps204v1234567890_1_switch", "off") %}
+          off
+          {% else %}
+          {{states.sensor.gps204v1234567890_1_power.state}} W
+          {% endif %}
+      poe_port2_power:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_2_power", "unavailable") %}
+          --
+          {% elif is_state( "switch.gps204v1234567890_2_switch", "off") %}
+          off
+          {% else %}
+          {{states.sensor.gps204v1234567890_2_power.state}} W
+          {% endif %}
+      poe_port3_power:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_3_power", "unavailable") %}
+          --
+          {% elif is_state( "switch.gps204v1234567890_3_switch", "off") %}
+          off
+          {% else %}
+          {{states.sensor.gps204v1234567890_3_power.state}} W
+          {% endif %}
+      poe_port4_power:
+        value_template: >
+          {% if is_state("sensor.gps204v1234567890_4_power", "unavailable") %}
+          --
+          {% elif is_state( "switch.gps204v1234567890_4_switch", "off") %}
+          off
+          {% else %}
+          {{states.sensor.gps204v1234567890_4_power.state}} W
+          {% endif %}

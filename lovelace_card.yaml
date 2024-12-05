@@ -1,0 +1,71 @@
+type: custom:html-card
+content: |
+  <div style="aspect-ratio: 50 / 12;">
+  <div class="content">
+    <div class="column" style="width:6.5%;"></div>
+    <div class="column" style="width:14.5%;"></div>
+    <div class="column" style="width:7%;">
+      <div style="height:30%;background-color:gray;"></div>
+    </div>
+    <div class="column" style="width:6%;">
+      <div style="height:30%;background-color:lightgreen;"></div>
+    </div>
+    <div class="column" style="width:12.5%;"> 
+      <div style="aspect-ratio: 10 / 5.5;background-color:[[sensor.poe_lan_speed]];"></div>
+      <div style="aspect-ratio: 10 / 9;background-color:black">
+      <p></p></div>
+    </div>
+    <div class="column" style="width:11.5%;">
+      <div style="aspect-ratio: 10 / 6;background-color:[[sensor.poe_port1_speed]];"></div>
+      <div style="aspect-ratio: 10 / 10;background-color:black">
+      <p>[[sensor.poe_port1_power]]</p></div>
+    </div>
+    <div class="column" style="width:11.5%;">
+     <div style="aspect-ratio: 10 / 6;background-color:[[sensor.poe_port2_speed]];"></div>
+      <div style="aspect-ratio: 10 / 10;background-color:black">
+      <p>[[sensor.poe_port2_power]]</p></div>
+    </div>
+    <div class="column" style="width:11.5%;">
+      <div style="aspect-ratio: 10 / 6;background-color:[[sensor.poe_port3_speed]];"></div>
+      <div style="aspect-ratio: 10 / 10;background-color:black">
+      <p>[[sensor.poe_port3_power]]</p></div>
+    </div>
+    <div class="column" style="width:12%;">
+      <div style="aspect-ratio: 10 / 5.8;background-color:[[sensor.poe_port4_speed]];"></div>
+      <div style="aspect-ratio: 10 / 9.5;background-color:black">
+      <p>[[sensor.poe_port4_power]]</p></div>
+    </div>
+  </div>
+  <div class="myimage"></div>
+  </div>
+  <style>
+  .content {
+    width: 100%;
+    display: flex;
+  }
+  .myimage {
+    background-image: url("/local/steamemo/steamemo_gps204_4.png");
+    width:94%;
+    height:100%;
+    aspect-ratio: 1111 / 270;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 13px;
+    z-index: 3;
+  }
+  .column {
+    display: inline-block;
+    z-index: 2;
+  }
+  p {
+    margin-top: 15px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 4px;
+  }
+
+  </style>
+grid_options:
+  columns: 36
+  rows: 2.3
